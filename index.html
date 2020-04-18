@@ -15,21 +15,24 @@
 
 		<!-- Title -->
 		<title>Abdulaziz Said Soud</title>
-	
-	
-	
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v1=xQO9qx2BWj">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v1=xQO9qx2BWj">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v1=xQO9qx2BWj">
-<link rel="manifest" href="/site.webmanifest?v1=xQO9qx2BWj">
-<link rel="mask-icon" href="/safari-pinned-tab.svg?v1=xQO9qx2BWj" color="#5bbad5">
-<link rel="shortcut icon" href="/favicon.ico?v1=xQO9qx2BWj">
-<meta name="apple-mobile-web-app-title" content="Shop bimany">
-<meta name="application-name" content="Shop bimany">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png?v1=xQO9qx2BWj">
-<meta name="theme-color" content="#ffffff">
+
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 	
 
 
@@ -43,11 +46,18 @@
 		<link href="css/custom.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:-->
 	    <!--[if lt IE 9] -->
 	      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	    <!--[endif] -->
+		<!--[endif] -->
+		<script
+		type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
+		<style>
+			/* pwa-install::part(openButton) {
+			background: grey;
+			} */
+		</style>
 	</head>
 	<body>
 		<!-- Pre Load Starts -->
@@ -61,6 +71,7 @@
 					<div id="left-wrapper" class="col-12 col-lg-8">
 						<!-- Main Content (Home) Starts -->
 						<div id="home" class="main-content">
+							<pwa-install></pwa-install>
 							<!-- Content Hanging On Home Section Starts -->
 							<div class="hanging">
 								<div class="logo-hanging">
@@ -77,6 +88,7 @@
 							<div class="inner-content">
 								<!-- Head Content Starts -->
 								<div class="head-content">
+									
 									<h3>I'M <span class="name">ABDULAZIZ SOUD</span></h3>
 									<h5>As a <span class="passion"></span></h5>
 								</div>
@@ -1570,6 +1582,16 @@
 		</div>
 		<!-- Wrapper Ends -->
 		
+
+		<script type="module">
+		// This is the "Offline copy of pages" (service worker)
+
+		import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+		const el = document.createElement('pwa-update');
+		document.body.appendChild(el);
+		</script>
+		<!-- End SW -->
 	
 
 		<!-- JS Files -->
