@@ -3,6 +3,17 @@
 
 <head>
 	<meta charset="UTF-8">
+	<link rel="manifest" href="manifest.json">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Bimany">
+	<meta name="apple-mobile-web-app-title" content="Bimany">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 
 
 	<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
@@ -18,6 +29,7 @@
 
 	<!-- Keywords -->
 	<meta name="keywords" content="Personal, Portfolio, CV, Resume">
+
 
 	<!-- Title -->
 	<title>Abdulaziz Said Soud</title>
@@ -35,10 +47,6 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
 
 
 
@@ -79,7 +87,7 @@
 							</div>
 							<div class="text-hanging">
 								<div class="word">
-									
+
 									<h6>HELLO <span>WORLD</span></h6>
 								</div>
 							</div>
@@ -89,7 +97,9 @@
 						<div class="inner-content">
 							<!-- Head Content Starts -->
 							<div class="head-content">
-								<center><pwa-install></pwa-install>z</center>
+								<center>
+									<pwa-install></pwa-install>
+								</center>
 								<h3>I'M <span class="name">ABDULAZIZ SOUD</span></h3>
 								<h5>As a <span class="passion"></span></h5>
 							</div>
@@ -1645,15 +1655,19 @@
 	<!-- Wrapper Ends -->
 
 
-	<script type="module">
-		// This is the "Offline copy of pages" (service worker)
-
-		import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-		const el = document.createElement('pwa-update');
-		document.body.appendChild(el);
-	</script>
-	<!-- End SW -->
+	    <!-- Service worker registration -->
+		<script type="text/javascript">
+			if (navigator.serviceWorker.controller) {
+			  console.log('[PWA Builder] active service worker found, no need to register')
+			} else {
+			  //Register the ServiceWorker
+			  navigator.serviceWorker.register('pwabuilder-sw.js', {
+				scope: './'
+			  }).then(function(reg) {
+				console.log('Service worker has been registered for scope:'+ reg.scope);
+			  });
+			}
+		  </script>
 
 
 	<!-- JS Files -->
